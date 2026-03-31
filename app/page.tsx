@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
-  { label: "Home", href: "#", active: true },
-  { label: "Vrouwencirkel", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "MoonSisters", href: "#" },
-  { label: "het jaarwiel", href: "#" },
-  { label: "Readings", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Vrouwencirkel", href: "/vrouwencirkel" },
+  { label: "Blog", href: "/blog" },
+  { label: "MoonSisters", href: "/moonsisters" },
+  { label: "het jaarwiel", href: "/het-jaarwiel" },
+  { label: "Readings", href: "/readings" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
               key={item.label}
               href={item.href}
               className={`inline-flex whitespace-nowrap px-5 py-[22px] text-[18px] text-[#111] no-underline transition ${
-                item.active ? "bg-[#ff1f2d]" : "hover:bg-black/4"
+                item.href === "/" ? "bg-[#ff1f2d]" : "hover:bg-black/5"
               }`}
             >
               <span className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex min-h-auto flex-col overflow-hidden rounded-[28px] bg-[#efefef] px-[22px] py-7 md:px-[38px] md:py-[42px] lg:min-h-[630px] lg:rounded-[38px]">
+        <div className="flex flex-col overflow-hidden rounded-[28px] bg-[#efefef] px-[22px] py-7 md:px-[38px] md:py-[42px] lg:min-h-[630px] lg:rounded-[38px]">
           <h1 className="mb-7 text-center text-[27px] leading-[1.35] font-normal tracking-[0.08em] md:mb-[42px] md:text-[34px] md:tracking-[0.12em]">
             Welkom bij
             <br />
@@ -82,14 +82,15 @@ export default function Home() {
 
           <div className="mt-auto flex flex-col gap-[14px]">
             <Link
-              href="#"
+              href="/het-jaarwiel"
               className="text-center text-[20px] leading-[1.25] tracking-[0.06em] text-[#ff7f8f] no-underline md:text-[24px] md:tracking-[0.1em]"
             >
-              Klik hier <span className="text-[#111]">voor De Oerkracht Ceremonies</span>
+              Klik hier{" "}
+              <span className="text-[#111]">voor De Oerkracht Ceremonies</span>
             </Link>
 
             <Link
-              href="#"
+              href="/vrouwencirkel"
               className="text-center text-[20px] leading-[1.25] tracking-[0.06em] text-[#ff7f8f] no-underline md:text-[24px] md:tracking-[0.1em]"
             >
               Klik hier{" "}
@@ -99,10 +100,13 @@ export default function Home() {
             </Link>
 
             <Link
-              href="#"
+              href="/readings"
               className="text-center text-[20px] leading-[1.25] tracking-[0.06em] text-[#ff7f8f] no-underline md:text-[24px] md:tracking-[0.1em]"
             >
-              Klik hier <span className="text-[#111]">als je op zoek bent naar een reading</span>
+              Klik hier{" "}
+              <span className="text-[#111]">
+                als je op zoek bent naar een reading
+              </span>
             </Link>
           </div>
         </div>
